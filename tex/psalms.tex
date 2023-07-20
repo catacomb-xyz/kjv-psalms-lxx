@@ -1,0 +1,116 @@
+\documentclass[12pt,openany]{book}
+
+\usepackage{indentfirst}
+\usepackage{titlesec}
+
+\titleformat{\chapter}
+  {\normalfont\LARGE\bfseries\centering}{\thechapter}{1em}{}
+\titlespacing*{\chapter}{0pt}{-40pt}{30pt}
+
+\titleformat{\section}
+  {\bfseries\centering}{\thesection}{1em}{}
+
+\renewcommand\contentsname{Index}
+
+\AtBeginDocument{
+  \addtocontents{toc}{\protect\thispagestyle{empty}}
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyheadoffset[RO,LE]{0.5in}
+\fancyhead[LE,RO]{\textsl{\rightmark}}
+\fancyhead[LO,RE]{\textsl{\leftmark}}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{15pt}
+
+\usepackage{fontspec}
+\setmainfont [
+  Path = ./../fonts/tex-gyre-schola/,
+  Extension = .ttf,
+  UprightFont = *-regular,
+  BoldFont = *-bold,
+  ItalicFont = *-italic,
+  BoldItalicFont= *-bold-italic,
+]{tex-gyre-schola}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage[
+  papersize={8.75in,11.25in},
+  layout=letterpaper,
+  layouthoffset=0.125in,
+  layoutvoffset=0.125in,
+  right=2in,
+  left=2in,
+  top=1.0in,
+  bottom=1.0in
+]{geometry}
+
+\clubpenalty=600
+\widowpenalties 1 10000
+\raggedbottom
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\setcounter{secnumdepth}{0}
+
+\title{The Psalter}
+\author{No one}
+\date{\today}
+
+\begin{document}
+
+\begin{titlepage}
+  \begin{center}
+  \vspace*{2in}
+
+  \begin{Huge}
+  \textbf{The Psalms}
+  \end{Huge}
+
+  \vspace{0.25in}
+  \begin{small}
+  KJV-LXX
+  \end{small}
+
+  \vfill
+
+  \end{center}
+\end{titlepage}
+
+\newpage
+
+%\thispagestyle{empty}
+%\begin{center}
+%\vspace*{2in}
+%Preprint Edition, \input{date.tex}
+
+%Git commit: \input{hash.tex}
+%\end{center}
+
+%\newpage
+
+\thispagestyle{empty}
+\ %empty
+
+\newpage
+
+\input{./../.tmp/psalms.tex}
+
+\newpage
+
+\thispagestyle{empty}
+\ %empty
+
+\newpage
+
+\newpage
+\pagestyle{plain}
+\pagenumbering{gobble}
+
+\end{document}
